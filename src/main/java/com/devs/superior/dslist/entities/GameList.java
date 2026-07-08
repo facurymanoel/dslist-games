@@ -1,5 +1,6 @@
 package com.devs.superior.dslist.entities;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -10,10 +11,12 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_game_list")
-public class GameList {
+public class GameList implements Serializable {
 
+	 private static final long serialVersionUID = 1L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String name;
 
